@@ -6,13 +6,13 @@
             "filters": [
                 {
                     "field": "From",
-                    "predicate": "contains",
-                    "value": "phonepe.com"
+                    "predicate": "equals",
+                    "value": "support@rbiretaildirect.org.in>"
                 },
                 {
                     "field": "Subject",
                     "predicate": "contains",
-                    "value": "Sent"
+                    "value": "Auction Announcement"
                 },
                 {
                     "field": "To",
@@ -33,12 +33,12 @@
                 {
                     "field": "From",
                     "predicate": "contains",
-                    "value": "ndml.in"
+                    "value": "indusind.com"
                 },
                 {
                     "field": "Subject",
-                    "predicate": "contains",
-                    "value": "NIR - Policy Updation"
+                    "predicate": "equals",
+                    "value": "IndusInd Bank Transaction Alert"
                 },
                 {
                     "field": "To",
@@ -47,6 +47,8 @@
                 }
             ],
             "action": {
+                "name": "Move Message",
+                "destination": "SPAM",
                 "apply": ["Mark as read"]
             }
         },
@@ -57,23 +59,24 @@
                 {
                     "field": "From",
                     "predicate": "equals",
-                    "value": "shipment-tracking@amazon.in"
-                },
-                {
-                    "field": "Subject",
-                    "predicate": "contains",
-                    "value": "Your Amazon.in order"
+                    "value": "stories@hackernoon.com"
                 },
                 {
                     "field": "To",
                     "predicate": "equals",
                     "value": "anandmoorthyj@gmail.com"
+                },
+                {
+                    "field": "Date",
+                    "predicate": "less than",
+                    "time_period_unit": "days",
+                    "value": 1
                 }
             ],
             "action": {
                 "name": "Move Message",
-                "destination": "CATEGORY_UPDATES",
-                "apply": ["Mark as read"]
+                "destination": "SPAM",
+                "apply": ["Mark as unread"]
             }
         }
     ]
