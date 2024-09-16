@@ -1,0 +1,80 @@
+{
+    "rules": [
+        {
+            "name": "Rule 1",
+            "condition": "all",
+            "filters": [
+                {
+                    "field": "From",
+                    "predicate": "contains",
+                    "value": "phonepe.com"
+                },
+                {
+                    "field": "Subject",
+                    "predicate": "contains",
+                    "value": "Sent"
+                },
+                {
+                    "field": "To",
+                    "predicate": "equals",
+                    "value": "anandmoorthyj@gmail.com"
+                }
+            ],
+            "action": {
+                "name": "Move Message",
+                "destination": "SPAM",
+                "apply": ["Mark as unread"]
+            }
+        },
+        {
+            "name": "Rule 2",
+            "condition": "all",
+            "filters": [
+                {
+                    "field": "From",
+                    "predicate": "contains",
+                    "value": "ndml.in"
+                },
+                {
+                    "field": "Subject",
+                    "predicate": "contains",
+                    "value": "NIR - Policy Updation"
+                },
+                {
+                    "field": "To",
+                    "predicate": "equals",
+                    "value": "anandmoorthyj@gmail.com"
+                }
+            ],
+            "action": {
+                "apply": ["Mark as read"]
+            }
+        },
+        {
+            "name": "Rule 3",
+            "condition": "all",
+            "filters": [
+                {
+                    "field": "From",
+                    "predicate": "equals",
+                    "value": "shipment-tracking@amazon.in"
+                },
+                {
+                    "field": "Subject",
+                    "predicate": "contains",
+                    "value": "Your Amazon.in order"
+                },
+                {
+                    "field": "To",
+                    "predicate": "equals",
+                    "value": "anandmoorthyj@gmail.com"
+                }
+            ],
+            "action": {
+                "name": "Move Message",
+                "destination": "CATEGORY_UPDATES",
+                "apply": ["Mark as read"]
+            }
+        }
+    ]
+}
