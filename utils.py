@@ -58,8 +58,8 @@ def store_emails(emails):
         subject = next(header['value'] for header in headers if header['name'] == 'Subject')
         body = email['snippet']
         received_date = email['internalDate']
-        from_email = extract_emails(from_email)
-        to_email = extract_emails(to_email)
+        from_email = extract_emails_id(from_email)
+        to_email = extract_emails_id(to_email)
         
         batch.append((msg_id, from_email, to_email, subject, body, received_date))
         
@@ -74,7 +74,7 @@ def store_emails(emails):
     conn.commit()
     conn.close()
 
-def extract_emails(text):
+def extract_emails_id(text):
     
     try:
         email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
