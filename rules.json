@@ -7,7 +7,7 @@
                 {
                     "field": "From",
                     "predicate": "equals",
-                    "value": "support@rbiretaildirect.org.in>"
+                    "value": "support@rbiretaildirect.org.in"
                 },
                 {
                     "field": "Subject",
